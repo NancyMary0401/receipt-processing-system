@@ -42,7 +42,12 @@ sudo apt-get install tesseract-ocr
    ```sh
    pip install -r requirements.txt
    ```
-3. **Run the backend**
+3. **Activate the virtual environment (Windows):**
+   ```sh
+   venv\Scripts\activate
+   ```
+   *(On macOS/Linux: `source venv/bin/activate`)*
+4. **Run the backend**
    ```sh
    python main.py
    ```
@@ -78,3 +83,14 @@ sudo apt-get install tesseract-ocr
 
 - Swagger: [http://localhost:8000/docs](http://localhost:8000/docs)
 - Redoc: [http://localhost:8000/redoc](http://localhost:8000/redoc)
+
+## API Testing
+
+To verify the API and its endpoints, you can run the provided test script:
+
+1. **Ensure the virtual environment is activated** (see Setup step 3).
+2. **Run the test script:**
+   ```sh
+   python test_api.py
+   ```
+   This script will test all major API endpoints and print the results in the console.

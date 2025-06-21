@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "bc6878c3-dbe0-43e1-a4c2-7b6c9fba30bc",
+		"name": "Automate Account",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46085515"
+	},
+	"item": [
+		{
+			"name": "upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Admin-PC/Documents/OCR_RECEIPT/receipt-processing-system/sample_receipt.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "file_id",
+							"value": "6",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/validate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "process",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "file_id",
+							"value": "6",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/process",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_receipts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/receipts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"receipts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_receipt_byId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/receipts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"receipts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_files",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "files_byId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/files/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"files",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

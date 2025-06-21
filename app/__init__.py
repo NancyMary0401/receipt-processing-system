@@ -1,1 +1,0 @@
-# Receipt OCR Processing System 
