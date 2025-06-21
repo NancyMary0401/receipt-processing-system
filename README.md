@@ -19,6 +19,10 @@ A backend service to extract and manage receipt data from scanned PDFs using OCR
 
 - Python 3.8+
 - Tesseract OCR (must be installed and in PATH)
+- **Note:** Sometimes the `Pillow` library (used for image processing) may not install automatically with other dependencies. If you encounter errors related to `Pillow`, install it manually using:
+  ```sh
+  pip install Pillow
+  ```
 
 ### Tesseract Installation
 
@@ -94,3 +98,5 @@ To verify the API and its endpoints, you can run the provided test script:
    python test_api.py
    ```
    This script will test all major API endpoints and print the results in the console.
+
+Alternatively, you can use a **Postman collection** to test the API endpoints interactively. Simply import the API requests into Postman and configure the base URL as needed.
