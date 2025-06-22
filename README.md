@@ -100,3 +100,15 @@ To verify the API and its endpoints, you can run the provided test script:
    This script will test all major API endpoints and print the results in the console.
 
 Alternatively, you can use a **Postman collection** to test the API endpoints interactively. Simply import the API requests into Postman and configure the base URL as needed.
+
+# Running the Backend Server
+
+To start the FastAPI backend server in development mode (with auto-reload), run the following command from inside the `receipt-processing-system` directory:
+
+```
+uvicorn app.main:app --reload
+```
+
+This will start the server at http://localhost:8000.
+
+You can access the interactive API docs at http://localhost:8000/docs.
