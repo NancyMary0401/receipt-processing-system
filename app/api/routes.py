@@ -15,9 +15,13 @@ async def root():
 async def upload_receipt(file: UploadFile = File(...)):
     """Upload a receipt file (PDF format only)"""
     try:
-        # Validate file type
+        # Validate file type by filename
         if not file.filename or not file_service.validate_file_type(file.filename):
             raise HTTPException(status_code=400, detail="Only PDF files are allowed")
+        
+        # Validate content type
+        if file.content_type != "application/pdf":
+            raise HTTPException(status_code=400, detail="Content-Type must be application/pdf")
         
         # Save file
         file_path = file_service.save_uploaded_file(file, file.filename)

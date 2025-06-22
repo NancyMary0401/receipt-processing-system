@@ -69,6 +69,12 @@ class ReceiptService:
             if not row:
                 return None
             
+            # Parse items as array
+            try:
+                items = json.loads(row[7]) if row[7] else []
+            except Exception:
+                items = []
+            
             return {
                 "id": row[0],
                 "purchased_at": row[1],
@@ -77,7 +83,7 @@ class ReceiptService:
                 "file_path": row[4],
                 "created_at": row[5],
                 "updated_at": row[6],
-                "items": row[7],
+                "items": items,
                 "payment_method": row[8],
                 "tax_amount": row[9],
                 "subtotal": row[10],
@@ -107,6 +113,10 @@ class ReceiptService:
             
             receipts = []
             for row in cursor.fetchall():
+                try:
+                    items = json.loads(row[7]) if row[7] else []
+                except Exception:
+                    items = []
                 receipts.append({
                     "id": row[0],
                     "purchased_at": row[1],
@@ -115,7 +125,7 @@ class ReceiptService:
                     "file_path": row[4],
                     "created_at": row[5],
                     "updated_at": row[6],
-                    "items": row[7],
+                    "items": items,
                     "payment_method": row[8],
                     "tax_amount": row[9],
                     "subtotal": row[10],
